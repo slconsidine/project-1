@@ -18,6 +18,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
     <!-- My CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
 
     <!-- My Javascript -->
 
@@ -26,7 +27,7 @@
 <body>  
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="./index.html">APP NAME</a>
+        <a class="navbar-brand" href="./index.html">Animal Search Selector</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -120,6 +121,39 @@
                 Female
             </label>
         </div>
+
+        <!-- Children or Other Pets At Home-->
+        <h4>Do you have children or other dogs/cats at home?</h4>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="form-children">
+          <label class="form-check-label" for="defaultCheck2">
+            Yes, I have children at home. 
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="form-other-dogs">
+          <label class="form-check-label" for="defaultCheck2">
+            Yes, I have a dog/other dogs at home. 
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="form-other-cats">
+          <label class="form-check-label" for="defaultCheck2">
+            Yes, I have a cat/other cats at home. 
+          </label>
+        </div>
+
+        <h4>Search within this radius: </h4>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Distance (in miles)</label>
+          <select class="form-control" id="distance-selector">
+            <option>10 miles</option>
+            <option>25 miles</option>
+            <option>50 miles</option>
+            <option>50 or more miles</option>
+          </select>
+        </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
 
 
