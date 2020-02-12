@@ -7,6 +7,7 @@
     <title>PROJECT 1 TEST</title>
 
     <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
     <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -18,6 +19,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
     <!-- My CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
 
     <!-- My Javascript -->
 
@@ -25,8 +27,8 @@
 
 <body>  
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="./index.html">APP NAME</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="./index.html"><img src="./assets/images/dog.png" alt="navbar-brand" width="30px" height="30px"> Animal Search Service</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,13 +39,13 @@
               <a class="nav-link" href="./index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Other HTML page</a>
+              <a class="nav-link" href="./survey.html">Find Pets Near Me</a>
             </li>
           </ul>
         </div>
     </nav>
 
-  <div class="jumbotron text-center">
+  <div class="jumbotron text-center" style="background-color: hotpink;">
     <h1>Petfinder.... but different</h1>
   </div>
 
@@ -120,12 +122,54 @@
                 Female
             </label>
         </div>
+
+        <!-- Children or Other Pets At Home-->
+        <h4>Do you have children or other dogs/cats at home?</h4>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="form-children">
+          <label class="form-check-label" for="defaultCheck2">
+            Yes, I have children at home. 
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="form-other-dogs">
+          <label class="form-check-label" for="defaultCheck2">
+            Yes, I have a dog/other dogs at home. 
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="form-other-cats">
+          <label class="form-check-label" for="defaultCheck2">
+            Yes, I have a cat/other cats at home. 
+          </label>
+        </div>
+
+        <h4>Search within this radius: </h4>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Distance (in miles)</label>
+          <select class="form-control" id="distance-selector">
+            <option>10 miles</option>
+            <option>25 miles</option>
+            <option>50 miles</option>
+            <option>50 or more miles</option>
+          </select>
+        </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
 
 
       </form>
   </div>
 
+<<<<<<< HEAD
         <script src="assets/api test.js.js" type="text/javascript"></script>
+=======
+      <script src="assets/api test.js.js" type="text/javascript"></script>
+
+  <footer>
+    <div>Icons made by <a href="https://www.flaticon.com/<?=_('authors/')?>freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+  </footer>
+
+>>>>>>> c4f78a2649618057ea51faec40cddbd378c6cfbb
 </body>
 </html>

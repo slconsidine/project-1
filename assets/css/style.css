@@ -1,3 +1,4 @@
+/* Bing Maps Styling */
 .directionsContainer{
     width:380px;
     height:100%;
@@ -10,4 +11,19 @@
     width:calc(100% - 380px);
     height:100%;
     float:left;
+}
+
+/* ----------------- */
+
+body{
+    background-color: darkgray;
+}
+
+nav {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-brand {
+    margin-left: 50px;
+    font-weight: bold;
 }
