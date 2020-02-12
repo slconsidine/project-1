@@ -15,9 +15,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
     <!-- My CSS -->
 
@@ -45,6 +43,11 @@
         </div>
     </nav>
 
+  <div class="jumbotron text-center">
+    <h1>Petfinder.... but different</h1>
+  </div>
+
+  <div class="container">
     <!-- Petmatcher Form -->
     <form>
         <!-- Radio Buttons to Select Pet-->
@@ -62,33 +65,6 @@
                   Cats
                 </label>
               </div>
-        </div>
-
-        <!-- Select Age for Pets-->
-        <h4>Select an age range for your pet. You can select more than one!</h4>
-        <div class="form-group">
-            <label for="exampleFormControlSelect2">Age Range</label>
-            <select multiple class="form-control" id="age-range">
-                <option>Baby</option>
-                <option>Young</option>
-                <option>Adult</option>
-                <option>Senior</option>
-            </select>
-        </div>
-
-        <!-- Select Gender for Pets-->
-        <h4>Which gender pet would you prefer?</h4>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="form-male">
-            <label class="form-check-label" for="form-gender-male">
-                Male
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="form-female">
-            <label class="form-check-label" for="form-gender-female">
-                Female
-            </label>
         </div>
 
         <!-- Select Size -->
@@ -118,7 +94,37 @@
             </label>
         </div>
 
+        <!-- Select Age for Pets-->
+        <h4>Select an age range for your pet. You can select more than one!</h4>
+        <div class="form-group">
+            <label for="exampleFormControlSelect2">Age Range</label>
+            <select multiple class="form-control" id="age-range">
+                <option>Baby</option>
+                <option>Young</option>
+                <option>Adult</option>
+                <option>Senior</option>
+            </select>
+        </div>
+
+        <!-- Select Gender for Pets-->
+        <h4>Which gender pet would you prefer?</h4>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="form-male">
+            <label class="form-check-label" for="form-gender-male">
+                Male
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="form-female">
+            <label class="form-check-label" for="form-gender-female">
+                Female
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+
       </form>
+  </div>
 
 </body>
 </html>
