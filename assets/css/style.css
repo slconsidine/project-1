@@ -74,3 +74,17 @@ footer {
     color: #ECF0F3;
     margin-top: 50px;
 }
+
+.pet-image {
+    display: block;
+}
+
+.animal a {
+    display: block;
+}
+
+/* rubber ducky :) */
+
+.rubber-ducky {
+    width: 200px;
+}
