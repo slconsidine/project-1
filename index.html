@@ -23,7 +23,6 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <!-- My Javascript -->
-
 </head>
 
 <body>  
@@ -55,125 +54,143 @@
 
 
   <div class="container">
+
+
     <!-- Petmatcher Form -->
     <h2 class="text-center">Find Your Perfect Pet!</h2>
-    <form>
+    <div class="text-center">
+      <button class="btn-dark" id="show">Show</button>
+      <button class="btn-dark" id="hide">Hide</button>
+    </div>
+    <form id="form">
         <!-- Radio Buttons to Select Pet-->
-        <div class="form-group">
-            <h4>What type of pet are you looking for?</h4>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="form-dogs">
-                <label class="form-check-label" for="defaultCheck1">
-                  Dogs
-                </label>
-              </div>
+        <div class="form-section">
+          <div class="form-group">
+              <h4>What type of pet are you looking for?</h4>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="form-cats">
-                <label class="form-check-label" for="defaultCheck2">
-                  Cats
-                </label>
-              </div>
-                <!-- <div class="col-md-3 text-center">
-                  <label class="image-checkbox" title="dog">
-                      <img src="./assets/images/dog silhouette.jpeg"/>
-                      <input type="checkbox" value="" id="form-dogs"/>
+                  <input class="form-check-input" type="checkbox" value="" id="form-dogs">
+                  <label class="form-check-label" for="defaultCheck1">
+                    Dogs
                   </label>
-              </div>
-              <div class="col-md-3 text-center">
-                  <label class="image-checkbox" title="cat">
-                      <img src="./assets/images/cat silhouette.jpg" />
-                      <input type="checkbox" value="germany" id="form-cats" />
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="form-cats">
+                  <label class="form-check-label" for="defaultCheck2">
+                    Cats
                   </label>
-              </div> -->
+                </div>
+                  <!-- <div class="col-md-3 text-center">
+                    <label class="image-checkbox" title="dog">
+                        <img src="./assets/images/dog silhouette.jpeg"/>
+                        <input type="checkbox" value="" id="form-dogs"/>
+                    </label>
+                </div>
+                <div class="col-md-3 text-center">
+                    <label class="image-checkbox" title="cat">
+                        <img src="./assets/images/cat silhouette.jpg" />
+                        <input type="checkbox" value="germany" id="form-cats" />
+                    </label>
+                </div> -->
+          </div>
         </div>
 
         <!-- Select Size -->
-        <h4>What size pet would you like?</h4>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="petSize" id="doesNotMatter" value="all" checked>
-            <label class="form-check-label" for="form-size">
-                Doesn't Matter! 
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="petSize" id="form-small" value="small">
-            <label class="form-check-label" for="form-size">
-                Small     
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="petSize" id="form-medium" value="medium">
-            <label class="form-check-label" for="form-size">
-                Medium     
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="petSize" id="form-large" value="large">
-            <label class="form-check-label" for="form-size">
-                Large     
-            </label>
-        </div>
+        <div class="form-section">
+          <h4>What size pet would you like?</h4>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="petSize" id="doesNotMatter" value="all" checked>
+              <label class="form-check-label" for="form-size">
+                  Doesn't Matter! 
+              </label>
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="petSize" id="form-small" value="small">
+              <label class="form-check-label" for="form-size">
+                  Small     
+              </label>
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="petSize" id="form-medium" value="medium">
+              <label class="form-check-label" for="form-size">
+                  Medium     
+              </label>
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="petSize" id="form-large" value="large">
+              <label class="form-check-label" for="form-size">
+                  Large     
+              </label>
+          </div>
+      </div>
 
         <!-- Select Age for Pets-->
-        <h4>Select an age range for your pet. You can select more than one!</h4>
-        <div class="form-group">
-            <label for="exampleFormControlSelect2">Age Range</label>
-            <select multiple class="form-control" id="age-range">
-                <option>Baby</option>
-                <option>Young</option>
-                <option>Adult</option>
-                <option>Senior</option>
-            </select>
+        <div class="form-section">
+          <h4>Select an age range for your pet. You can select more than one!</h4>
+          <div class="form-group">
+              <label for="exampleFormControlSelect2">Age Range</label>
+              <select multiple class="form-control" id="age-range">
+                  <option>Baby</option>
+                  <option>Young</option>
+                  <option>Adult</option>
+                  <option>Senior</option>
+              </select>
+          </div>
         </div>
 
         <!-- Select Gender for Pets-->
-        <h4>Which gender pet would you prefer?</h4>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="form-male">
-            <label class="form-check-label" for="form-gender-male">
-                Male
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="form-female">
-            <label class="form-check-label" for="form-gender-female">
-                Female
-            </label>
+        <div class="form-section">
+          <h4>Which gender pet would you prefer?</h4>
+          <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="form-male">
+              <label class="form-check-label" for="form-gender-male">
+                  Male
+              </label>
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="form-female">
+              <label class="form-check-label" for="form-gender-female">
+                  Female
+              </label>
+          </div>
         </div>
 
         <!-- Children or Other Pets At Home-->
-        <h4>Do you have children or other dogs/cats at home?</h4>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="form-children">
-          <label class="form-check-label" for="defaultCheck2">
-            Yes, I have children at home. 
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="form-other-dogs">
-          <label class="form-check-label" for="defaultCheck2">
-            Yes, I have a dog/other dogs at home. 
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="form-other-cats">
-          <label class="form-check-label" for="defaultCheck2">
-            Yes, I have a cat/other cats at home. 
-          </label>
-        </div>
-
-        <h4>Search within this radius: </h4>
-        <div class="form-group">
-          <label for="exampleFormControlSelect1">Distance (in miles)</label>
-          <select class="form-control" id="distance-selector">
-            <option>10 miles</option>
-            <option>25 miles</option>
-            <option>50 miles</option>
-            <option>50 or more miles</option>
-          </select>
+        <div class="form-section">
+          <h4>Do you have children or other dogs/cats at home?</h4>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="form-children">
+            <label class="form-check-label" for="defaultCheck2">
+              Yes, I have children at home. 
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="form-other-dogs">
+            <label class="form-check-label" for="defaultCheck2">
+              Yes, I have a dog/other dogs at home. 
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="form-other-cats">
+            <label class="form-check-label" for="defaultCheck2">
+              Yes, I have a cat/other cats at home. 
+            </label>
+          </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="form-section">
+          <h4>Search within this radius: </h4>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Distance (in miles)</label>
+            <select class="form-control" id="distance-selector">
+              <option>10 miles</option>
+              <option>25 miles</option>
+              <option>50 miles</option>
+              <option>50 or more miles</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="submit">Submit</button>
 
 
       </form>
@@ -183,6 +200,7 @@
     <div>Icons made by <a href="https://www.flaticon.com/?=_('authors/')?>freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
   </footer>
 
+  <script src="assets/script/logic.js" type="text/javascript"></script>
   <script src="./assets/api test.js.js" type="text/javascript"></script>
 
 </body>
