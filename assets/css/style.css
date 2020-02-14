@@ -64,3 +64,13 @@ h4 {
     padding: 10px 0px;
 }
 
+h2 {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+footer {
+    background-color: #343A40;
+    color: #ECF0F3;
+    margin-top: 50px;
+}
