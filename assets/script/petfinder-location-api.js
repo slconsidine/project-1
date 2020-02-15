@@ -38,6 +38,9 @@ $("#submit").click(function(){
                 var cityText = JSON.stringify(response.animals[i].contact.address.city);
                 var stateText = JSON.stringify(response.animals[i].contact.address.state);
                 var postcodeText = JSON.stringify(response.animals[i].contact.address.postcode);
+                if (response.animals[i].contact.address.address1 == null){
+                    addressText = ""
+                }
                 var fullAddress = addressText + cityText + stateText + postcodeText;
                 // var addressText = JSON.stringify(response.animals[i].contact.address);
                 // var nobracketsFullAdd = fullAddress.replace(/[address1 address2 null{("")}]/g, '');
