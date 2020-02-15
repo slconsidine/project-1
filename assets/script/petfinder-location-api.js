@@ -24,36 +24,57 @@ $("#submit").click(function(){
         url:queryURL,
         method:"GET", 
         headers:{
-            "Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImY0ODE2NDM2ZGViZWU1YjZkZmM1MTBkMWI0YWViZDMxZGU1MmJiMWI2NjhiYmU1Mzk3NWVhYzI5ZGVkYWUxNTYwYmRiYmQwNmYzNjFlMDM0In0.eyJhdWQiOiI5RERyV0d2UVVuWUpwZDBWbElVUVduaU5TSEtuR0RLQkZDUGlrWDZtb211QTlvWWxLaSIsImp0aSI6ImY0ODE2NDM2ZGViZWU1YjZkZmM1MTBkMWI0YWViZDMxZGU1MmJiMWI2NjhiYmU1Mzk3NWVhYzI5ZGVkYWUxNTYwYmRiYmQwNmYzNjFlMDM0IiwiaWF0IjoxNTgxNzgxNTU3LCJuYmYiOjE1ODE3ODE1NTcsImV4cCI6MTU4MTc4NTE1Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.OZRdd7u2bbvlFgsVw5ruYpqLvn4F3PYZtWvK6axamVQmM0Z5jIqmVIJ9gViH-ug-jW_u4tgNBoN82cfBEpppdK42LtLoRjPtATDMbUlkNVgxgrQyBysAOzXt7oj33z28_xm9UButz7sLCg24sL8XLIysyFOYLrDGwaKGzOYjQ6OZiQo4j1KwI52tef1-uRgB-hEhBdRw44_rDAYHxjkURcxQEA2X5oGb76yYYeyHBFQmwmjmAUxO91HgIIgSzOkEcLjYi3Den7aMGYbbxiBR6vKccnqPP6pbWT04Lq_wHEuppPmuT-3uDcZGTMsHiD3ishHRZ5ngJcUgvGzPLshsyg" 
+            "Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjgwMDdkZjQ1Zjc5OGNmYmM2ZDdjMmMwZmM3MjJlZTg0OTYwZDY2NjUzZjk0ZmUwNmFjYTg1YWI1MTQyZTVkZjRhNTNiNzhlODIzYWM0ZjA4In0.eyJhdWQiOiI5RERyV0d2UVVuWUpwZDBWbElVUVduaU5TSEtuR0RLQkZDUGlrWDZtb211QTlvWWxLaSIsImp0aSI6IjgwMDdkZjQ1Zjc5OGNmYmM2ZDdjMmMwZmM3MjJlZTg0OTYwZDY2NjUzZjk0ZmUwNmFjYTg1YWI1MTQyZTVkZjRhNTNiNzhlODIzYWM0ZjA4IiwiaWF0IjoxNTgxNzg4OTkzLCJuYmYiOjE1ODE3ODg5OTMsImV4cCI6MTU4MTc5MjU5Mywic3ViIjoiIiwic2NvcGVzIjpbXX0.S_AU7bIVB2McAGpXowpoO3dP8W-qQlzZFbJ4v_9Aotr5Pf2UKNQ77aL1JKvt-DJdDbxHzLTReBW8guiUe0oexTr990DLEMbgVW2Nvfa0qnmdV2PnE-eTROEHhtWcLDYDNEG-7KxHAfu1IBjk7yE0ecVBfHbq4rqVM_JoOQjcB60on9WqluCl0mQgIPSAaL5cqNzCOj-uEWLLJk-K6MpYOrevcIpWOea06Q86nMbdN4gbLr_kRJeiioJ5ZAs_S0d3pY33OdpPrFSfn8QzRZXHt08R7SyBYLJs3L7byxeK-nkQw1ScOITeyBnjVVoaStC_YQHDu_ubIzUlYMnr-fsVnA" 
         }
 
         
     })
         .done(function(response){
          console.log(response)
+         var hasState = false;
          for(var i=0; i<response.animals.length; i++){
                 var submitDiv = $("<div>");
-                var address = response.animals[i].contact.address.state;
+                var addressState = response.animals[i].contact.address.state;
                 var addressText = JSON.stringify(response.animals[i].contact.address.address1);
                 var cityText = JSON.stringify(response.animals[i].contact.address.city);
                 var stateText = JSON.stringify(response.animals[i].contact.address.state);
                 var postcodeText = JSON.stringify(response.animals[i].contact.address.postcode);
+                var pFl = response.animals[i].url
                 if (response.animals[i].contact.address.address1 == null){
                     addressText = ""
                 }
-                var fullAddress = addressText + cityText + stateText + postcodeText;
+                var fullAddress = "Address: " + addressText + cityText + stateText + postcodeText;
                 // var addressText = JSON.stringify(response.animals[i].contact.address);
-                // var nobracketsFullAdd = fullAddress.replace(/[address1 address2 null{("")}]/g, '');
-                var p = $("<p>").text("Address: "+ fullAddress);
+                var nobracketsFullAdd = fullAddress.replace(/[{("")}]/g, ' ');
+                var p = $("<p>").text(nobracketsFullAdd);
                 submitDiv.append(p);
-                console.log(response.animals[i].contact.address.address1);
-                if (state === address){
-                    $("#results").append(submitDiv);
-
-                }
-
+                var pFinderLink = $("<a>");
+                pFinderLink.attr("href", pFl);
+                pFinderLink.attr("target", "_blank");
+                pFinderLink.text("View Profile");
                 
-    }
+                // console.log (response.animals[i].url)
+                // console.log("petfinder state" + state);
+                // console.log(stateText)
+                if (state === addressState){
+                    $("#results").append(submitDiv);
+                    // pFinderbutton = $("<button>");
+                    // pFinderLink.append(pFinderbutton)
+                    $("#results").append(pFinderLink);
+                    hasState = true
+
+
+                } 
+                
+                
+            }
+                    if (hasState === false) {
+                        var noLocPic = $("<img>");
+                        var noResPic = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/35f48d50910679.58dcde64b9214.png"
+                        noLocPic.attr("src", noResPic)
+    
+                        $("#results").append(noLocPic)
+                    }
     });
     return false;
 
