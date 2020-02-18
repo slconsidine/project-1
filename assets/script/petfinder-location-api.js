@@ -1,31 +1,43 @@
+var firebaseConfig = {
+    apiKey: "AIzaSyAHxylB2_IHL7HnowuuDfY5mJV0L-ZcGME",
+    authDomain: "project-1-c18d7.firebaseapp.com",
+    databaseURL: "https://project-1-c18d7.firebaseio.com",
+    projectId: "project-1-c18d7",
+    storageBucket: "project-1-c18d7.appspot.com",
+    messagingSenderId: "1093659752373",
+    appId: "1:1093659752373:web:c2d0c341e7f0788e340bfc"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    
+    $("#submit").click(function(){
+        $("#results").empty();
+        var state = document.getElementById("inputState").value;
+        var fname = document.getElementById("inputEmail4").value;
+        var lname = document.getElementById("inputLastName").value;
+        var email = document.getElementById("emailInput1").value;
+        var phone = document.getElementById("phone").value;
+        var adress = document.getElementById("inputAddress").value;
+        var adress2 = document.getElementById("inputAddress2").value;
+        var city = document.getElementById("inputCity").value;
+        var zip = document.getElementById("inputZip").value;
+        var userdata = firebase.database();
 
 
-$("#submit").click(function(){
-    var state = document.getElementById("inputState").value;
-    $("#results").empty();
-        // fname : document.getElementById("inputFirstName").value,
-        // lname : document.getElementById("inputLastName").value,
-        // email : document.getElementById("emailInput1").value,
-        // phone : document.getElementById("phone").value,
-        // adress : document.getElementById("inputAddress").value,
-        // adress2 : document.getElementById("inputAddress2").value,
-        // city : document.getElementById("inputCity").value,
-        // state : document.getElementById("inputState").value,
-        // zip : document.getElementById("inputZip").value,
     
     // event.preventDefault();
     // var submitDiv = $("<div>");
     // submitDiv.append(test);
     // $("#results").append(submitDiv);
     
-    console.log (state);
-
+    // console.log (state);
+    
     var queryURL = "https://api.petfinder.com/v2/animals/?api_key=9DDrWGvQUnYJpd0VlIUQWniNSHKnGDKBFCPikX6momuA9oYlKi";
     $.ajax({
         url:queryURL,
         method:"GET", 
         headers:{
-            "Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM0MTk5ODZkYTMzZDQ1Y2JmZDc3NWM4Yzg4MDc4MmY0ZTNhOTAzNjM1ODgzODIxNjBhMDE1NGRlNzJlMTFiOGU3NjRmNzA5OGIwZTk2Y2YxIn0.eyJhdWQiOiI5RERyV0d2UVVuWUpwZDBWbElVUVduaU5TSEtuR0RLQkZDUGlrWDZtb211QTlvWWxLaSIsImp0aSI6IjM0MTk5ODZkYTMzZDQ1Y2JmZDc3NWM4Yzg4MDc4MmY0ZTNhOTAzNjM1ODgzODIxNjBhMDE1NGRlNzJlMTFiOGU3NjRmNzA5OGIwZTk2Y2YxIiwiaWF0IjoxNTgyMDY2NjIxLCJuYmYiOjE1ODIwNjY2MjEsImV4cCI6MTU4MjA3MDIyMSwic3ViIjoiIiwic2NvcGVzIjpbXX0.BZRN9WxXBDH4I_VMuQzgREADKLVERb77Y5_DpyxVEGPpQ524IvdhQERAGor-gGGe3eM_RPTgclsMQmsgpgsSFJ95UPyuLQUEY3wi6F3HN6m0_1uBbcJxnJFc0TlAStSTY1Glr-ZheoesgS62hF7yTKWyULPQMTrE_bJhw5j3XgVsvSbCHsxtej-Pa6kI990gXdvb32xoGy82bpGYsq46yxuduBnrPnNfk-NXjs53fXJ7jglQkpqV7x6jCN2tGoAd_zsQN5Hb-LxZpUgu2bySJ0G_6SWl6izJ-WP-SX7MJl6OzoLUI9S2TptZ691O-PpnGVPYE8jDbWdsehKTd6AExw"  
+
         }
 
         
@@ -35,6 +47,7 @@ $("#submit").click(function(){
          var hasState = false;
          for(var i=0; i<response.animals.length; i++){
                 var submitDiv = $("<div>");
+                
                 var addressState = response.animals[i].contact.address.state;
                 var addressText = JSON.stringify(response.animals[i].contact.address.address1);
                 var cityText = JSON.stringify(response.animals[i].contact.address.city);
