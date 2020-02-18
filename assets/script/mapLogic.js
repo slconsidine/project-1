@@ -1,10 +1,15 @@
-
+const urlParams = new URLSearchParams(window.location.search);
+const petAddress = urlParams.get('petAddress');
+const usrAddress = urlParams.get('usrLocation');
+console.log(petAddress);
+console.log(usrAddress);
 var map;
 var directionsManager;
 
 function GetMap()
 {
     map = new Microsoft.Maps.Map('#myMap', {});
+    console.log(map);
 
     //Load the directions module.
     Microsoft.Maps.loadModule('Microsoft.Maps.Directions', function () {
@@ -15,11 +20,11 @@ function GetMap()
         directionsManager.setRenderOptions({ itineraryContainer: '#directionsItinerary' });
 
         //Create waypoints to route between.
-        var seattleWaypoint = new Microsoft.Maps.Directions.Waypoint({ address: 'Seattle, WA' });
-        directionsManager.addWaypoint(seattleWaypoint);
+        var petWaypoint = new Microsoft.Maps.Directions.Waypoint({ address: petAddress });
+        directionsManager.addWaypoint(petWaypoint);
 
-        var workWaypoint = new Microsoft.Maps.Directions.Waypoint({ address: 'Work', location: new Microsoft.Maps.Location(47.64, -122.1297) });
-        directionsManager.addWaypoint(workWaypoint);
+        var usrWaypoint = new Microsoft.Maps.Directions.Waypoint({ address: usrAddress });
+        directionsManager.addWaypoint(usrWaypoint);
 
         //Specify the element in which the itinerary will be rendered.
         directionsManager.setRenderOptions({ itineraryContainer: '#directionsItinerary' });
