@@ -1,30 +1,59 @@
+var firebaseConfig = {
+    apiKey: "AIzaSyAHxylB2_IHL7HnowuuDfY5mJV0L-ZcGME",
+    authDomain: "project-1-c18d7.firebaseapp.com",
+    databaseURL: "https://project-1-c18d7.firebaseio.com",
+    projectId: "project-1-c18d7",
+    storageBucket: "project-1-c18d7.appspot.com",
+    messagingSenderId: "1093659752373",
+    appId: "1:1093659752373:web:c2d0c341e7f0788e340bfc"
+    };
+    firebase.initializeApp(firebaseConfig);
 
+    
+    $("#submit").click(function(){
+        $("#results").empty();
+        var state = document.getElementById("inputState").value;
+        var fname = document.getElementById("inputEmail4").value;
+        var lname = document.getElementById("inputLastName").value;
+        var email = document.getElementById("emailInput1").value;
+        var phone = document.getElementById("phone").value;
+        var adress = document.getElementById("inputAddress").value;
+        var adress2 = document.getElementById("inputAddress2").value;
+        var city = document.getElementById("inputCity").value;
+        var zip = document.getElementById("inputZip").value;
+        var userdata = firebase.database();
 
-$("#submit").click(function(){
-    var state = document.getElementById("inputState").value;
-        // fname : document.getElementById("inputFirstName").value,
-        // lname : document.getElementById("inputLastName").value,
-        // email : document.getElementById("emailInput1").value,
-        // phone : document.getElementById("phone").value,
-        // adress : document.getElementById("inputAddress").value,
-        // adress2 : document.getElementById("inputAddress2").value,
-        // city : document.getElementById("inputCity").value,
-        // state : document.getElementById("inputState").value,
-        // zip : document.getElementById("inputZip").value,
+    userdata.ref().set({
+        userstate: state,
+        userfname: fname,
+        userlname: lname,
+        useremail: email,
+        userphone: phone,
+        useradress: adress,
+        useradress2: adress2,
+        usercity: city,
+        userzip: zip
+      });
+    
+    
+    
+    // saveData (state, fname, lname, email, phone, adress, adress2, city, zip);
+    
+    
     
     // event.preventDefault();
     // var submitDiv = $("<div>");
     // submitDiv.append(test);
     // $("#results").append(submitDiv);
     
-    console.log (state);
-
+    // console.log (state);
+    
     var queryURL = "https://api.petfinder.com/v2/animals/?api_key=9DDrWGvQUnYJpd0VlIUQWniNSHKnGDKBFCPikX6momuA9oYlKi";
     $.ajax({
         url:queryURL,
         method:"GET", 
         headers:{
-            "Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjgwMDdkZjQ1Zjc5OGNmYmM2ZDdjMmMwZmM3MjJlZTg0OTYwZDY2NjUzZjk0ZmUwNmFjYTg1YWI1MTQyZTVkZjRhNTNiNzhlODIzYWM0ZjA4In0.eyJhdWQiOiI5RERyV0d2UVVuWUpwZDBWbElVUVduaU5TSEtuR0RLQkZDUGlrWDZtb211QTlvWWxLaSIsImp0aSI6IjgwMDdkZjQ1Zjc5OGNmYmM2ZDdjMmMwZmM3MjJlZTg0OTYwZDY2NjUzZjk0ZmUwNmFjYTg1YWI1MTQyZTVkZjRhNTNiNzhlODIzYWM0ZjA4IiwiaWF0IjoxNTgxNzg4OTkzLCJuYmYiOjE1ODE3ODg5OTMsImV4cCI6MTU4MTc5MjU5Mywic3ViIjoiIiwic2NvcGVzIjpbXX0.S_AU7bIVB2McAGpXowpoO3dP8W-qQlzZFbJ4v_9Aotr5Pf2UKNQ77aL1JKvt-DJdDbxHzLTReBW8guiUe0oexTr990DLEMbgVW2Nvfa0qnmdV2PnE-eTROEHhtWcLDYDNEG-7KxHAfu1IBjk7yE0ecVBfHbq4rqVM_JoOQjcB60on9WqluCl0mQgIPSAaL5cqNzCOj-uEWLLJk-K6MpYOrevcIpWOea06Q86nMbdN4gbLr_kRJeiioJ5ZAs_S0d3pY33OdpPrFSfn8QzRZXHt08R7SyBYLJs3L7byxeK-nkQw1ScOITeyBnjVVoaStC_YQHDu_ubIzUlYMnr-fsVnA" 
+            "Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjAxN2ViZDczMWYzNDcwMTZhMjUyOTlkY2UwZjUwYTdiZGY3YmE2OTE4N2RhODM0ZmQ1MTQ4ZTEyMWVmYzRiZmE3MjBlZDljODYzZjk0MzE0In0.eyJhdWQiOiI5RERyV0d2UVVuWUpwZDBWbElVUVduaU5TSEtuR0RLQkZDUGlrWDZtb211QTlvWWxLaSIsImp0aSI6IjAxN2ViZDczMWYzNDcwMTZhMjUyOTlkY2UwZjUwYTdiZGY3YmE2OTE4N2RhODM0ZmQ1MTQ4ZTEyMWVmYzRiZmE3MjBlZDljODYzZjk0MzE0IiwiaWF0IjoxNTgyMDY2MDQ3LCJuYmYiOjE1ODIwNjYwNDcsImV4cCI6MTU4MjA2OTY0Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.q8cZntvzS9N6eXkFGB2Zw4bL8ODHdHS3yM2NApgFf0Y8PQcd6nIgxVSN3Krd48R3aT_iGH0Q-PLaNyEvGjeWBlfcYp8zgnCuS-QqcXhq4mk7RjLeq591PE5VFspIgd0vcbNk6TkqMee2R8Rjt3tv6bxrpPeIY8yT99oj_FOQF9xwD4NglSXn8R2FfSrTDbQiLxKQ6bpWEdywOaC8oYciYAJ6BkaL86aSnJh_Clbg4x437HTaD9i7MNidJ__ml4tWtACU9Z6aS_TlvwfBjeuWtHt9XXEnGpI26Ah16Fj76bx3wceYywQ33uEQU7lPQJHq4VX3Dwal_vuIG1Wv4ThKow" 
         }
 
         
@@ -34,6 +63,7 @@ $("#submit").click(function(){
          var hasState = false;
          for(var i=0; i<response.animals.length; i++){
                 var submitDiv = $("<div>");
+                
                 var addressState = response.animals[i].contact.address.state;
                 var addressText = JSON.stringify(response.animals[i].contact.address.address1);
                 var cityText = JSON.stringify(response.animals[i].contact.address.city);
