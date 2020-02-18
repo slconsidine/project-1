@@ -23,17 +23,19 @@ var firebaseConfig = {
         var zip = document.getElementById("inputZip").value;
         var userdata = firebase.database();
 
-    userdata.ref().set({
-        userstate: state,
-        userfname: fname,
-        userlname: lname,
-        useremail: email,
-        userphone: phone,
-        useradress: adress,
-        useradress2: adress2,
-        usercity: city,
-        userzip: zip
+        userdata.ref().set({
+            userstate: state,
+            userfname: fname,
+            userlname: lname,
+            useremail: email,
+            userphone: phone,
+            useradress: adress,
+            useradress2: adress2,
+            usercity: city,
+            userzip: zip
       });
+
+      document.getElementById("survey").reset();
     
     
     
