@@ -24,6 +24,29 @@ var firebaseConfig = {
         var userdata = firebase.database();
 
 
+        userdata.ref().push({
+            userstate: state,
+            userfname: fname,
+            userlname: lname,
+            useremail: email,
+            userphone: phone,
+            useradress: adress,
+            useradress2: adress2,
+            usercity: city,
+            userzip: zip
+        });
+
+        document.getElementById("survey").reset();
+
+    
+    
+    
+    // saveData (state, fname, lname, email, phone, adress, adress2, city, zip);
+    
+    
+=======
+
+
     
     // event.preventDefault();
     // var submitDiv = $("<div>");
