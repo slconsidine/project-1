@@ -23,23 +23,7 @@ var firebaseConfig = {
         var zip = document.getElementById("inputZip").value;
         var userdata = firebase.database();
 
-    userdata.ref().set({
-        userstate: state,
-        userfname: fname,
-        userlname: lname,
-        useremail: email,
-        userphone: phone,
-        useradress: adress,
-        useradress2: adress2,
-        usercity: city,
-        userzip: zip
-      });
-    
-    
-    
-    // saveData (state, fname, lname, email, phone, adress, adress2, city, zip);
-    
-    
+
     
     // event.preventDefault();
     // var submitDiv = $("<div>");
@@ -53,7 +37,7 @@ var firebaseConfig = {
         url:queryURL,
         method:"GET", 
         headers:{
-            "Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjAxN2ViZDczMWYzNDcwMTZhMjUyOTlkY2UwZjUwYTdiZGY3YmE2OTE4N2RhODM0ZmQ1MTQ4ZTEyMWVmYzRiZmE3MjBlZDljODYzZjk0MzE0In0.eyJhdWQiOiI5RERyV0d2UVVuWUpwZDBWbElVUVduaU5TSEtuR0RLQkZDUGlrWDZtb211QTlvWWxLaSIsImp0aSI6IjAxN2ViZDczMWYzNDcwMTZhMjUyOTlkY2UwZjUwYTdiZGY3YmE2OTE4N2RhODM0ZmQ1MTQ4ZTEyMWVmYzRiZmE3MjBlZDljODYzZjk0MzE0IiwiaWF0IjoxNTgyMDY2MDQ3LCJuYmYiOjE1ODIwNjYwNDcsImV4cCI6MTU4MjA2OTY0Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.q8cZntvzS9N6eXkFGB2Zw4bL8ODHdHS3yM2NApgFf0Y8PQcd6nIgxVSN3Krd48R3aT_iGH0Q-PLaNyEvGjeWBlfcYp8zgnCuS-QqcXhq4mk7RjLeq591PE5VFspIgd0vcbNk6TkqMee2R8Rjt3tv6bxrpPeIY8yT99oj_FOQF9xwD4NglSXn8R2FfSrTDbQiLxKQ6bpWEdywOaC8oYciYAJ6BkaL86aSnJh_Clbg4x437HTaD9i7MNidJ__ml4tWtACU9Z6aS_TlvwfBjeuWtHt9XXEnGpI26Ah16Fj76bx3wceYywQ33uEQU7lPQJHq4VX3Dwal_vuIG1Wv4ThKow" 
+
         }
 
         
@@ -77,6 +61,7 @@ var firebaseConfig = {
                 // var addressText = JSON.stringify(response.animals[i].contact.address);
                 var nobracketsFullAdd = fullAddress.replace(/[{("")}]/g, ' ');
                 var p = $("<p>").text(nobracketsFullAdd);
+                p.addClass("resultsStyle");
                 submitDiv.append(p);
                 var pFinderLink = $("<a>");
                 pFinderLink.attr("href", pFl);
