@@ -2,6 +2,7 @@
 
 $("#submit").click(function(){
     var state = document.getElementById("inputState").value;
+    $("#results").empty();
         // fname : document.getElementById("inputFirstName").value,
         // lname : document.getElementById("inputLastName").value,
         // email : document.getElementById("emailInput1").value,
@@ -24,7 +25,7 @@ $("#submit").click(function(){
         url:queryURL,
         method:"GET", 
         headers:{
-            "Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjgwMDdkZjQ1Zjc5OGNmYmM2ZDdjMmMwZmM3MjJlZTg0OTYwZDY2NjUzZjk0ZmUwNmFjYTg1YWI1MTQyZTVkZjRhNTNiNzhlODIzYWM0ZjA4In0.eyJhdWQiOiI5RERyV0d2UVVuWUpwZDBWbElVUVduaU5TSEtuR0RLQkZDUGlrWDZtb211QTlvWWxLaSIsImp0aSI6IjgwMDdkZjQ1Zjc5OGNmYmM2ZDdjMmMwZmM3MjJlZTg0OTYwZDY2NjUzZjk0ZmUwNmFjYTg1YWI1MTQyZTVkZjRhNTNiNzhlODIzYWM0ZjA4IiwiaWF0IjoxNTgxNzg4OTkzLCJuYmYiOjE1ODE3ODg5OTMsImV4cCI6MTU4MTc5MjU5Mywic3ViIjoiIiwic2NvcGVzIjpbXX0.S_AU7bIVB2McAGpXowpoO3dP8W-qQlzZFbJ4v_9Aotr5Pf2UKNQ77aL1JKvt-DJdDbxHzLTReBW8guiUe0oexTr990DLEMbgVW2Nvfa0qnmdV2PnE-eTROEHhtWcLDYDNEG-7KxHAfu1IBjk7yE0ecVBfHbq4rqVM_JoOQjcB60on9WqluCl0mQgIPSAaL5cqNzCOj-uEWLLJk-K6MpYOrevcIpWOea06Q86nMbdN4gbLr_kRJeiioJ5ZAs_S0d3pY33OdpPrFSfn8QzRZXHt08R7SyBYLJs3L7byxeK-nkQw1ScOITeyBnjVVoaStC_YQHDu_ubIzUlYMnr-fsVnA" 
+            "Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM0MTk5ODZkYTMzZDQ1Y2JmZDc3NWM4Yzg4MDc4MmY0ZTNhOTAzNjM1ODgzODIxNjBhMDE1NGRlNzJlMTFiOGU3NjRmNzA5OGIwZTk2Y2YxIn0.eyJhdWQiOiI5RERyV0d2UVVuWUpwZDBWbElVUVduaU5TSEtuR0RLQkZDUGlrWDZtb211QTlvWWxLaSIsImp0aSI6IjM0MTk5ODZkYTMzZDQ1Y2JmZDc3NWM4Yzg4MDc4MmY0ZTNhOTAzNjM1ODgzODIxNjBhMDE1NGRlNzJlMTFiOGU3NjRmNzA5OGIwZTk2Y2YxIiwiaWF0IjoxNTgyMDY2NjIxLCJuYmYiOjE1ODIwNjY2MjEsImV4cCI6MTU4MjA3MDIyMSwic3ViIjoiIiwic2NvcGVzIjpbXX0.BZRN9WxXBDH4I_VMuQzgREADKLVERb77Y5_DpyxVEGPpQ524IvdhQERAGor-gGGe3eM_RPTgclsMQmsgpgsSFJ95UPyuLQUEY3wi6F3HN6m0_1uBbcJxnJFc0TlAStSTY1Glr-ZheoesgS62hF7yTKWyULPQMTrE_bJhw5j3XgVsvSbCHsxtej-Pa6kI990gXdvb32xoGy82bpGYsq46yxuduBnrPnNfk-NXjs53fXJ7jglQkpqV7x6jCN2tGoAd_zsQN5Hb-LxZpUgu2bySJ0G_6SWl6izJ-WP-SX7MJl6OzoLUI9S2TptZ691O-PpnGVPYE8jDbWdsehKTd6AExw"  
         }
 
         
@@ -47,6 +48,7 @@ $("#submit").click(function(){
                 // var addressText = JSON.stringify(response.animals[i].contact.address);
                 var nobracketsFullAdd = fullAddress.replace(/[{("")}]/g, ' ');
                 var p = $("<p>").text(nobracketsFullAdd);
+                p.addClass("resultsStyle");
                 submitDiv.append(p);
                 var pFinderLink = $("<a>");
                 pFinderLink.attr("href", pFl);
