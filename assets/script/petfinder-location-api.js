@@ -25,6 +25,7 @@ var firebaseConfig = {
 
 
         userdata.ref().push({
+
             userstate: state,
             userfname: fname,
             userlname: lname,
@@ -34,7 +35,10 @@ var firebaseConfig = {
             useradress2: adress2,
             usercity: city,
             userzip: zip
-        });
+
+      });
+
+
 
         document.getElementById("survey").reset();
 
