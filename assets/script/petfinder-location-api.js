@@ -48,7 +48,7 @@ var firebaseConfig = {
     // saveData (state, fname, lname, email, phone, adress, adress2, city, zip);
     
     
-=======
+
 
 
     
@@ -63,9 +63,7 @@ var firebaseConfig = {
     $.ajax({
         url:queryURL,
         method:"GET", 
-        headers:{
-
-        }
+        headers: {"Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjJiODcwZTBiNzYzMjYyZjZiOGM3MjY2YmExYTYyYmRkYWMxYTA4OGRhMzgyYWQzODMzZTY2OTAwNzJjMjY2MmU3ZTMxYzUyMDBmODc3YzlkIn0.eyJhdWQiOiI5RERyV0d2UVVuWUpwZDBWbElVUVduaU5TSEtuR0RLQkZDUGlrWDZtb211QTlvWWxLaSIsImp0aSI6IjJiODcwZTBiNzYzMjYyZjZiOGM3MjY2YmExYTYyYmRkYWMxYTA4OGRhMzgyYWQzODMzZTY2OTAwNzJjMjY2MmU3ZTMxYzUyMDBmODc3YzlkIiwiaWF0IjoxNTgyMDY5Mjc1LCJuYmYiOjE1ODIwNjkyNzUsImV4cCI6MTU4MjA3Mjg3NSwic3ViIjoiIiwic2NvcGVzIjpbXX0.q3lipgKgN7tAr7PoG_qGKxJ9LxsCtjTNkUNs8qU287-7csWSjDeUMFsUFupypGF4NFEuTAJQMCklHKksNiYZgJRqqZ39YnjmU8alTA1rJpIBhU707dQifPdlE3wgkAJH7tvZ4x2PoXreMIcbwA4IkFfdqf32szqB8G4943feVdpd7uezmgt_Q3wRyChj1MRT8sKZ5oLo30rKQl1CkVSGqEsnFwIvjH7Ad_6Rkwfc0IJjzKWJmmEzT35-sg_uFp2lvvLp3H9KG6fUaHofZQ4-efShYjz0GYZVy7u5hG1UU8zKfqX1ry-ALsep_HPbthpS7TbmLR53YRdOsKCbUSlujw"}
 
         
     })
