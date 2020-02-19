@@ -13,9 +13,11 @@
 
 #myMap{
     position:relative;
-    width:calc(100% - 380px);
+    width: calc(100%-380px);
     height:100%;
     float:left;
+    transform: scale(1); /* Standard Property */
+    transform-origin: 0 0;  /* Standard Property */
 }
 
 /* ----------------- */
